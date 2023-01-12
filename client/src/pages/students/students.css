@@ -1,0 +1,22 @@
+.section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.info_disp span {
+  text-align: center;
+  min-width: 100px;
+}
+.title {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  width: 90%;
+  margin: auto;
+}
+.title span {
+  text-align: center;
+  min-width: 100px;
+}
