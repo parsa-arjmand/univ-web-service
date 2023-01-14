@@ -5,10 +5,10 @@ const app = express();
 
 //create connection
 const db = mysql.createConnection({
-  // host: "arthur.iran.liara.ir",
+  // host: "localhost",
   // port: "34106",
   user: "root",
-  password: "nlNQZ1gvbTrJiGVEeNcjhUqL",
+  password: "1234",
   database: "university",
 });
 
