@@ -5,6 +5,9 @@ function Section() {
   const { data, isPending, error } = useFetch("https://parsaarjmand.iran.liara.run/q3");
   return (
     <div className="section">
+      <div className="title">
+        <span>نام دانشجو</span>
+      </div>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">در حال پردازش ...</p>}
       {data &&

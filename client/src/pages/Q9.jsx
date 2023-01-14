@@ -5,6 +5,9 @@ function Q9() {
   const { data, isPending, error } = useFetch("https://parsaarjmand.iran.liara.run/q9");
   return (
     <div className="section">
+      <div className="title">
+        <span>معدل (با ضریب)</span>
+      </div>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">در حال پردازش ...</p>}
       {data &&

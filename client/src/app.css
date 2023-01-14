@@ -11,27 +11,39 @@
 body {
   font-family: "vazir", sans-serif;
 }
+p,
+h1,
+h2,
+h3,
+h4 {
+  color: #1e293b;
+}
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
 .button {
   text-align: center;
   font-family: inherit;
   font-size: 0.9rem;
   padding: 0.5rem 0.4rem;
-  background: #0059ff;
+  background: #4f46e5;
   border: none;
-  border-radius: 7px;
+  border-radius: 0.5rem;
   color: white;
   transition: all 0.4s ease;
   cursor: pointer;
   text-decoration: none;
 }
 .button:hover {
-  background: #0004ff;
+  background: #3730a3;
 }
 .back-button {
   font-family: inherit;
   font-size: 0.9rem;
   padding: 0.5rem 0.4rem;
-  background-color: #0059ff;
+  background-color: #1e293b;
   border: none;
   border-radius: 7px;
   color: white;
@@ -39,12 +51,22 @@ body {
   cursor: pointer;
   text-decoration: none;
   display: flex;
+  align-items: center;
   margin-right: auto;
   margin-bottom: 1rem;
+  margin-top: 0.8rem;
+}
+.button-cont {
+  display: flex;
+  gap: 0.6rem;
+}
+.button.sql {
+  background-color: #dedaff;
+  color: #3730a3;
+  font-weight: bold;
 }
 .app {
-  height: 100vh;
-  background-color: rgb(250, 250, 250);
+  background-color: #fdfdfd;
 }
 main {
   min-height: 90vh;
@@ -53,19 +75,59 @@ main {
   margin: auto;
 }
 .q-content {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 7px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   transition: all 0.4 ease;
   margin-bottom: 1rem;
 }
-.q-content:hover {
-  transform: translateY(-1px);
+
+.q-content.navbar {
+  background-color: #eeeeee;
+  padding: 0;
+  box-shadow: none;
+  padding: 0.6rem 0.4rem;
+}
+.q-content.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+.q-content.navbar .button {
+  background-color: #dedaff;
+  color: #3730a3;
+  font-weight: bold;
+  font-size: 0.8rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+.q-content.navbar .button.model {
+  background: #4f46e5;
+  color: white;
+  font-weight: 400;
+}
+.next-img {
+  display: none;
+  width: 16px;
 }
 .q-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+.title {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 7px;
+  padding: 1rem 0;
+  width: 95% !important;
+  margin: auto;
+  font-size: 0.95rem;
 }
 .image-container {
   display: flex;
@@ -78,4 +140,30 @@ main {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 7px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #c6c0ff;
+  border-radius: 100vh;
+  border: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3730a3;
+}
+@media screen and (max-width: 976px) {
+  main {
+    width: 95%;
+  }
 }

@@ -5,6 +5,10 @@ function Q6() {
   const { data, isPending, error } = useFetch("https://parsaarjmand.iran.liara.run/q6");
   return (
     <div className="section">
+      <div className="title">
+        <span>نام دانشجو</span>
+        <span>تاریخ تولد</span>
+      </div>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">در حال پردازش ...</p>}
       {data &&

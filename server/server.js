@@ -5,10 +5,10 @@ const app = express();
 
 //create connection
 const db = mysql.createConnection({
-  host: "psdb",
-  port: "3306",
+  // host: "arthur.iran.liara.ir",
+  // port: "34106",
   user: "root",
-  password: "4TfIfSpNdlXAYcNHetzqMk10",
+  password: "nlNQZ1gvbTrJiGVEeNcjhUqL",
   database: "university",
 });
 
@@ -19,11 +19,66 @@ db.connect((err) => {
 });
 //middleware
 app.use(cors());
-
+app.get("/course", (req, res) => {
+  const q = "SELECT * from university.course";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/cspt", (req, res) => {
+  const q = "SELECT * from university.cspt";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/group-student", (req, res) => {
+  const q = "SELECT * from university.group_student";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/groups", (req, res) => {
+  const q = "SELECT * from university.groups";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/groups-course", (req, res) => {
+  const q = "SELECT * from university.groups_course";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/prof", (req, res) => {
+  const q = "SELECT * from university.prof";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/student", (req, res) => {
+  const q = "SELECT * from university.student";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+app.get("/term", (req, res) => {
+  const q = "SELECT * from university.term";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
 app.get("/q1", (req, res) => {
   //شماره دانشجویی،تاریخ تولد و نام دانشجویان گروه کامپیوتر
   const q =
-    "SELECT student.name,student.SID,student.birth_date FROM student, university.groups , group_student WHERE university.groups.GID = group_student.GID AND student.SID = group_student.SID AND university.groups.name = 'comp.sci' GROUP BY student.name ";
+    "SELECT student.name,student.SID,student.birth_date FROM student, university.groups , group_student WHERE university.groups.GID = group_student.GID AND student.SID = group_student.SID AND university.groups.name = 'comp.sci' GROUP BY student.SID";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);

@@ -2,7 +2,7 @@ header {
   display: flex;
   align-items: center;
   min-height: 10vh;
-  background-color: rgb(6, 7, 29);
+  background-color: #1e293b;
 }
 .header-container {
   width: 90%;

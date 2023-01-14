@@ -6,6 +6,11 @@ function Students() {
   const { data, isPending, error } = useFetch("https://parsaarjmand.iran.liara.run/q1");
   return (
     <div className="section">
+      <div className="title">
+        <span>کد دانشجویی</span>
+        <span>نام دانشجو</span>
+        <span>تاریخ تولد</span>
+      </div>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">در حال پردازش ...</p>}
       {data &&
